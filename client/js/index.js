@@ -14,8 +14,6 @@ function App() {
         '/campaign': 'campaign',
         '/profile': 'profile',
         '/master': 'home-master',
-        '/local-sum': 'local-sum',
-        '/remote-sum': 'remote-sum',
         '/worker':'home-worker'
         
     };

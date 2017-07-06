@@ -2,6 +2,12 @@
 <html>
 <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <style>
+  log-out{
+    position:absolute;
+    cursor:pointer;
+    top:20px;
+    left:80%;
+  }
   line-drawer {
     display: inline-block;
     position: relative;
@@ -35,22 +41,20 @@ line-drawer > canvas {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand"  data-bind="path: '/'" id="indexLink" href="#">Ko Example</a>
+      <a class="navbar-brand"  data-bind="path: '/'" id="indexLink" href="#">Goga's Project</a>
       <a style="display:none " class="navbar-brand"  data-bind="path: '/campaign'" id="goToDetails" href="#"></a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="visibility:hidden">
       <ul class="nav navbar-nav">
-        <li  id="profile-link" data-bind="path: '/profile'" >
-            <a data-bind="path: '/profile'">Profile</a>
+        <li   data-bind="path: '/profile'" >
+            <a id="profile-link" data-bind="path: '/profile'">Profile</a>
         </li>
         <li data-bind="path: home" >
             <a id="home-button" data-bind="path: home">Home</a>
         </li>
-        <li data-bind="path: '/local-sum'">
-            <a data-bind="path: '/local-sum'">Local Sum</a>
-        </li>
+
         <log-out params="context:context"></log-out>
       </ul>
     </div><!-- /.navbar-collapse -->

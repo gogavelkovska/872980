@@ -22,8 +22,9 @@ Repository.prototype.check = function (context) {
 Repository.prototype.checkIndex = function (context) {
     if(context.repositories.token!="")
     {
+
         document.getElementById("bs-example-navbar-collapse-1").style.visibility = 'visible';
-        document.getElementById("profile-link").click();
+        document.getElementById("home-button").click();
     }
 };
 

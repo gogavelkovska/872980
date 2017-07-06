@@ -68,7 +68,7 @@ function ViewModel(ctx) {
                 }
             });
         }).catch(function(e){
-                if(e.textStatus==404||e.textStatus==="Not Found")
+                if(e.textStatus==404||e.textStatus==="Not Found" ||e.textStatus==410||e.textStatus==="Gone")
                     {
                         alert("No more Images");
                         self.details({});
@@ -105,7 +105,7 @@ function ViewModel(ctx) {
                 }
             });
         }).catch(function(e){
-                if(e.textStatus==404||e.textStatus==="Not Found")
+                if(e.textStatus==404||e.textStatus==="Not Found" || e.textStatus==410 ||e.textStatus==="Gone")
                     {
                         alert("No more Images");
                         self.details({});
@@ -147,7 +147,7 @@ function ViewModel(ctx) {
                 }
             });
         }).catch(function(e){
-                if(e.textStatus==404||e.textStatus==="Not Found")
+                if(e.textStatus==404||e.textStatus==="Not Found" ||e.textStatus==410||e.textStatus==="Gone")
                     {
                         alert("No  Images");
                         self.details({});

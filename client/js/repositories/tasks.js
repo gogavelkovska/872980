@@ -96,8 +96,8 @@ Repository.prototype.start = function (token,id) {
         },
         error: function(err, textStatus, errorThrown) { 
                
-            if(err.status == 404 || err.status == 412  || errorThrown == 'Not Found') 
-            { 
+            if(err.status == 404 || err.status == 410  || errorThrown == 'Not Found' || errorThrown == 'Gone')
+            {
                 var e=new Error(err);
                 e.textStatus=err.status;
                 reject(e);
@@ -146,7 +146,7 @@ Repository.prototype.getNext = function (token,session) {
         },
         error: function(err, textStatus, errorThrown) { 
                
-            if(err.status == 404 || err.status == 412  || errorThrown == 'Not Found') 
+            if(err.status == 404 || err.status == 410  || errorThrown == 'Not Found' || errorThrown == 'Gone')
             { 
                 var e=new Error(err);
                 e.textStatus=err.status;
