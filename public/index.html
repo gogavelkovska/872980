@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<style>
+  line-drawer {
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    line-height: 0;
+    user-select: none
+}
+
+line-drawer > img.background {
+    max-width: 100%;
+    min-width: 100%;
+}
+
+line-drawer > canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+  </style>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand"  data-bind="path: '/'" id="indexLink" href="#">Ko Example</a>
+      <a style="display:none " class="navbar-brand"  data-bind="path: '/campaign'" id="goToDetails" href="#"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" style="visibility:hidden">
+      <ul class="nav navbar-nav">
+        <li  id="profile-link" data-bind="path: '/profile'" >
+            <a data-bind="path: '/profile'">Profile</a>
+        </li>
+        <li data-bind="path: home" >
+            <a id="home-button" data-bind="path: home">Home</a>
+        </li>
+        <li data-bind="path: '/local-sum'">
+            <a data-bind="path: '/local-sum'">Local Sum</a>
+        </li>
+        <log-out params="context:context"></log-out>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<ko-component-router params="routes: routes, hashbang: true, repositories: repositories ,app:context"></ko-component-router>
+<script src='vendor/jquery.min.js'></script>
+<script src='vendor/knockout-latest.min.js'></script>
+<script src='vendor/ko-component-router.min.js'></script>
+<script src='vendor/bootstrap.min.js'></script>
+<script src='js/index.js'></script>
+</body>
+</html>

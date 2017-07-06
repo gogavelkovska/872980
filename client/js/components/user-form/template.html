@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="form-group" data-bind="css: {'has-error': nameError}">
+        <label for="firstName">New Name</label>
+        <input data-bind='textinput: fullname' type='text' id="firstName" class="form-control" placeholder="Full Name">
+        <p data-bind="text: nameError" class="help-block"></p>
+    </div>
+    <div class="form-group" data-bind="css: {'has-error': passError}">
+        <label for="lastName">New Password</label>
+        <input data-bind='textinput: password' type='text' id="lastName" class="form-control" placeholder="Password" >
+        <p data-bind="text: passError" class="help-block"></p>
+    </div>
+    <div class="form-group" data-bind="css: {'has-error': saveError}">
+        <p data-bind="text: saveError" class="help-block"></p>
+    </div>
+     <button data-bind="click: save" type="button" class="btn btn-default" aria-label="Add">
+       Save
+    </button>
+    <button data-bind="click: back" type="button" class="btn btn-default" aria-label="Add">
+       Back
+    </button>
+    <p data-bind="text:result" style="color:green"></p>
+</div>

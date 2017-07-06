@@ -1,0 +1,92 @@
+<div class="container">
+    <h1>Goga</h1>
+<div class="container">
+    <head>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+    </head>
+    	<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				<div class="panel panel-login">
+					<div class="panel-heading">
+						<div class="row">
+							<div class="col-xs-6">
+								<a href="#" class="active" id="login-form-link">Login</a>
+							</div>
+							<div class="col-xs-6">
+								<a href="#" id="register-form-link">Register</a>
+							</div>
+						</div>
+						<hr>
+					</div>
+					<div class="panel-body">
+						<div class="row">
+
+							<div class="col-lg-12">
+								<form id="login-form" action="http://phpoll.com/login/process" method="post" role="form" style="display: block;">
+									<div class="form-group"  data-bind="css: {'has-error': logInUsernameError}">
+										<input type="text" data-bind='textinput: logInUsername' name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+                                        <p data-bind="text: logInUsernameError" class="help-block"></p>
+                                    </div>
+									<div class="form-group"  data-bind="css: {'has-error': logInPasswordError}">
+										<input type="password" data-bind='textinput: logInPassword' name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+                                        <p data-bind="text: logInPasswordError" class="help-block"></p>
+                                    </div>
+									
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<input type="button" data-bind="click: logIn" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-login" value="Log In">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-lg-12">
+												<div class="text-center">
+													<a href="http://phpoll.com/recover" tabindex="5" class="forgot-password">Forgot Password?</a>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+								<form id="register-form" action="http://phpoll.com/register/process" method="post" role="form" style="display: none;">
+									<div class="form-group" data-bind="css: {'has-error': usererror}">
+										<input type="text" data-bind='textinput: username' name="username" id="username" tabindex="1" class="form-control" placeholder="Username" value="">
+										<p data-bind="text: usererror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': nameerror}">
+										<input type="fullname" data-bind='textinput: fullName' name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Full Name" value="">
+										<p data-bind="text: nameerror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': passerror}">
+										<input type="password" data-bind='textinput: password' name="password" id="password" tabindex="2" class="form-control" placeholder="Password">
+										<p data-bind="text: passerror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': confirmerror}">
+										<input type="password" data-bind='textinput: confirm' name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Confirm Password">
+										<p data-bind="text: confirmerror" class="help-block"></p>
+									</div>
+									<div class="form-group">
+										<p>Manager?</p>
+										<input type="checkbox" data-bind='checked: manager' name="typeworker" id="typeworker" tabindex="1" class="form-control" value="">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<button data-bind="click: register" type="button" class="btn btn-default" aria-label="Add">
+        											Register
+    											</button>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

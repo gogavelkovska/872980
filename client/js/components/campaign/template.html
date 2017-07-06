@@ -1,0 +1,192 @@
+ <head>
+        <link rel="stylesheet" href="./index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        
+    </head>
+<div style="display:inline-block" class="container" data-bind="if:ready">
+    <div style="display:inline-block">
+    <h2>Modify Campaign</h2>
+    <form style="display:inline-block" id="campaign-form"   role="form" >
+									<div class="form-group" data-bind="css: {'has-error': nameerror}">
+                                        <p>Name<p>
+										<input type="text" data-bind='textinput: name' name="username" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
+										<p data-bind="text: nameerror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': selection_error}">
+                                         <p>Selection Replica<p>
+										<input type="number" data-bind='textinput: selection_replica' name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Number of selection workers" value="">
+										<p data-bind="text: selection_error" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': thresholderror}">
+                                        <p>Selection Threshold<p>
+										<input type="number" data-bind='textinput: threshold' name="password" id="password" tabindex="2" class="form-control" placeholder="Selection Threshold">
+										<p data-bind="text: thresholderror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': annotation_error}">
+                                        <p>Annotation Replica<p>
+										<input type="number" data-bind='textinput: annotation_replica' name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Number of Annotation workers">
+										<p data-bind="text: annotation_error" class="help-block"></p>
+									</div>
+									<div class="form-group">
+                                        <p>Annotation Size<p>
+										<input type="number" data-bind='textinput: annotation_size' name="typeworker" id="typeworker" tabindex="1" class="form-control" value="" placeholder="Annotation Size">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<button data-bind="click: modify" type="button" class="btn btn-default" aria-label="Add">
+        											Modify Campaign
+    											</button>
+                                                <p data-bind="text:resultModify"></p>
+											</div>
+										</div>
+									</div>
+				</form>
+            <div style="display:inline-block" data-bind="if:ready" class="container">
+	<div class="row">
+		<h1> <span class="title-label">Workers</span></h1>
+        <nav class="navbar navbar-default query" role="query">
+           
+                
+            </div>
+        </nav>
+        <div class="table-responsive col-md-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Selector</th>
+                        <th>Anotator</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: workers">
+                    <tr>
+                        <td data-bind="text:$data['fullname']"></td>
+                        <td data-bind="text:$data['selector']"></td>
+                        <td data-bind="text:$data['annotator']"></td>
+                        <td>
+                            <span ><button style="margin-left:10%" data-bind="text:selection,click: $parent.selection.bind($data)" ></button></span>
+                            <span ><button style="margin-left:10%" data-bind="text:annotation,click: $parent.annotation.bind($data)" ></button></span>
+                        </td>
+                       
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+       
+	</div>
+          </div> 
+          
+          </div >  
+<div data-bind="if:ready">
+             <button class="btn btn-primary create " data-bind="click:publish">Publish Campaign</button>
+             <p data-bind="text:PublishError" style="color:red"></p>
+          </div>
+          <div data-bind="if:started">
+             <button class="btn btn-primary create " data-bind="click:terminate">Terminate Campaign</button>
+             <p data-bind="text:TerminateError" style="color:red"></p>
+          </div>  
+
+
+<div class="container" data-bind="if:ended">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<div class="row">
+		<div class="col-md-6">
+<!--Windows-->
+<div class="panel panel-primary">
+      <div class="panel-heading">
+        <h3 class="panel-title"  >STATISTICS</h3>
+      </div>
+      <div class="panel-body">
+      <img src="">
+      
+        <ul>
+        <li>Campaign:<span data-bind="text:details().name"></span></li>
+		<li>Number of images:<span data-bind="text:details().images"></span></li>
+		<li>Number of Accepted Images:<span data-bind="text:details().accepted"></span></li>
+		<li>Number of Rejected Images:<span data-bind="text:details().rejected"></span></li>
+		<li>Number of Annotations:<span data-bind="text:details().annotation"></span></li>
+		<li>Average Number of Annotations per Image:<span data-bind="text:details().annotation/details().images"></span></li>
+		
+		</ul>
+      </div>
+	  
+    </div>
+	
+	</div>
+	<!--OS X-->
+	
+	</div>
+</div>                 
+<div style="display:inline-block" class="container">
+	<div class="row">
+		<h1> <span class="title-label">Image List</span></h1>
+        <nav class="navbar navbar-default query" role="query">
+            <div  data-bind="if:ready" class="container-fluid">
+               <label >Upload Image </label> 
+               <input type="file" id="files" />
+                    <button class="btn btn-primary create pull-right" data-bind="click:upload">Upload</button>
+                    <p data-bind="uploadError" style="color:red"></p>
+                </div>
+                
+            
+        </nav>
+        <div class="table-responsive col-md-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: items">
+                    <tr>
+                        <td>
+                            <img style="max-width:200px;max-height:200px" data-bind="click:$parent.select.bind($data),attr:{src: 'http://awt.ifmledit.org'+$data['canonical']}" style="white-space: pre-wrap;"/>
+                            <span data-bind="if:$parent.ready"><button style="margin-left:10%;color:red" data-bind="click: $parent.delete.bind($data)" >X</button></span>
+                        </td>
+                       
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+       
+	</div>
+</div>
+<div class="container" data-bind="if:selected">    
+                <div class="jumbotron">
+                  <div class="row">
+                      <div class="col-md-4 col-xs-12 col-sm-6 col-lg-4">
+                         
+                          <line-drawer style="max-width:250px;max-height:400px" params="context:context,src: selected, pen: size, line: line"></line-drawer>
+                      </div>
+                      <div class="col-md-8 col-xs-12 col-sm-6 col-lg-8">
+                          <div class="container" style="border-bottom:1px solid black">
+                            <h2>Image</h2>
+                          </div>
+                            <hr>
+                          <ul class="container details">
+                            <li><p><span class="glyphicon " data-bind="text:accepted()+' times accepted'" style="width:50px;"></span></p></li>
+                            <li><p><span class="glyphicon " data-bind="text:rejected()+' times rejected'"style="width:50px;"></span></p></li>
+                    <div >
+                            <table data-bind="if:annotations().length">
+                                 <button class="btn btn-primary create " data-bind="click:clearAnnotation">Clear</button>
+                             <tbody data-bind="foreach: annotations">
+                            <tr style="cursor:pointer" data-bind="click:$parent.showAnnotation">
+                                <td data-bind="text:$data['id']">
+                            
+                            
+                        </td>
+                       
+                    </tr>
+                    
+                </tbody>
+                </table>
+                    </div>
+                          </ul>
+                      </div>
+                  </div>
+                </div>

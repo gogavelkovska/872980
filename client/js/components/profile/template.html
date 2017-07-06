@@ -1,0 +1,22 @@
+<div class="container" id="user-details">
+    <div class="form-group">
+        <label for="firstName">Name</label>
+        <input data-bind='textinput: fullname' type='text' id="firstName" class="form-control" placeholder="First Name">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Username</label>
+        <input data-bind='textinput: username' type='text' id="lastName" class="form-control" placeholder="Last Name" readonly="true">
+    </div>
+
+    <div class="form-group">
+        <label for="fullName">Account Type</label>
+        <input data-bind='textinput: type' type='text' id="fullName" class="form-control" readonly="true">
+    </div>
+    <div class="form-group" data-bind="css: {'has-error': userError}">
+        <p data-bind="text: userError" class="help-block"></p>
+    </div>
+     <button data-bind="click: changeData" type="button" class="btn btn-default" aria-label="Add">
+       Change Credentials
+    </button>
+</div>
+<user-form id="user-form" params="context:context" style="display:none"></user-form>

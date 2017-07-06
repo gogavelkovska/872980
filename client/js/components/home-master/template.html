@@ -1,0 +1,74 @@
+
+<div style="display:inline-block" class="container">
+    <div style="display:inline-block">
+    <h2>Create Campaign</h2>
+    <form id="campaign-form"   role="form" >
+									<div class="form-group" data-bind="css: {'has-error': nameerror}">
+										<input type="text" data-bind='textinput: name' name="username" id="username" tabindex="1" class="form-control" placeholder="Name" value="">
+										<p data-bind="text: nameerror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': selection_error}">
+										<input type="number" data-bind='textinput: selection_replica' name="fullname" id="fullname" tabindex="1" class="form-control" placeholder="Number of selection workers" value="">
+										<p data-bind="text: selection_error" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': thresholderror}">
+										<input type="number" data-bind='textinput: threshold' name="password" id="password" tabindex="2" class="form-control" placeholder="Selection Threshold">
+										<p data-bind="text: thresholderror" class="help-block"></p>
+									</div>
+									<div class="form-group" data-bind="css: {'has-error': annotation_error}">
+										<input type="number" data-bind='textinput: annotation_replica' name="confirm-password" id="confirm-password" tabindex="2" class="form-control" placeholder="Number of Annotation workers">
+										<p data-bind="text: annotation_error" class="help-block"></p>
+									</div>
+									<div class="form-group">
+									
+										<input type="number" data-bind='textinput: annotation_size' name="typeworker" id="typeworker" tabindex="1" class="form-control" value="" placeholder="Annotation Size">
+									</div>
+									<div class="form-group">
+										<div class="row">
+											<div class="col-sm-6 col-sm-offset-3">
+												<button data-bind="click: create" type="button" class="btn btn-default" aria-label="Add">
+        											Create Campaign
+    											</button>
+											</div>
+										</div>
+									</div>
+								</form>
+          </div> 
+          <div style="display:inline-block">                     
+<div style="display:inline-block" class="container">
+	<div class="row">
+		<h1> <span class="title-label">Campaign List</span></h1>
+        <nav class="navbar navbar-default query" role="query">
+            <div class="container-fluid">
+               
+                    <button class="btn btn-primary create pull-right">button</button>
+                </div>
+                
+            </div>
+        </nav>
+        <div class="table-responsive col-md-12">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Campaign Name</th>
+                        <th>Execution state</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: items">
+                    <tr>
+                        <td data-bind="text: $data['name']" style="white-space: pre-wrap;"></td>
+                        <td data-bind="text: $data['status']"></td>
+                        <td >
+                           <button  data-bind="click: $parent.details($data)" type="button" class="btn btn-default" aria-label="Add">
+        											Details
+    											</button>
+                       </td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+       
+	</div>
+</div>

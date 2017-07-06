@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="form-group" data-bind="css: {'has-error': aError}">
+        <label for="a">A</label>
+        <input data-bind='value: a' type='text' id="a" class="form-control" placeholder="A">
+        <p data-bind="text: aError" class="help-block"></p>
+    </div>
+
+    <div class="form-group" data-bind="css: {'has-error': bError}">
+        <label for="b">B</label>
+        <input data-bind='textinput: b' type='text' id="b" class="form-control" placeholder="B">
+        <p data-bind="text: bError" class="help-block"></p>
+    </div>
+
+    <button data-bind="click: add" type="button" class="btn btn-default" aria-label="Add">
+        Add
+    </button>
+
+    <div class="form-group">
+        <label for="result">A + B</label>
+        <input data-bind='textinput: result' type='text' id="result" class="form-control" readonly="true">
+    </div>
+</div>
