@@ -113,7 +113,7 @@ Repository.prototype.start = function (token,id) {
             else if (err.message)
                 error.textStatus=err.message;
             else
-                error.textStatus="Couldn't start a new session";    
+                error.textStatus="Couln't start a new session";    
             reject(error);
             },
         }).done(function () {
@@ -148,10 +148,8 @@ Repository.prototype.getNext = function (token,session) {
                
             if(err.status == 404 || err.status == 410  || errorThrown == 'Not Found' || errorThrown == 'Gone')
             { 
-                
                 var e=new Error(err);
                 e.textStatus=err.status;
-                
                 reject(e);
                 
              }

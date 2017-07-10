@@ -66,27 +66,9 @@ function ViewModel(ctx) {
                         self.image(task.image);
                         self.size(task.size);
                 }
-            }).catch(function(e){
-                
-                if(e.textStatus===404 || e.textStatus===410 || e.textStatus==="404" || e.textStatus==="410")
-                    {
-                        
-                        alert("No more Images");
-                        self.details({});
-                        self.executing(false);
-                        self.session(undefined);
-                    }
-                else if(e.textStatus)
-                    {   
-                        alert(e.textStatus);
-                       
-                        }
-                  
-                 else
-                    console.log(e);
             });
         }).catch(function(e){
-                if(e.textStatus==404 ||e.textStatus==410)
+                if(e.textStatus==404||e.textStatus==="Not Found" ||e.textStatus==410||e.textStatus==="Gone")
                     {
                         alert("No more Images");
                         self.details({});
@@ -121,30 +103,10 @@ function ViewModel(ctx) {
                         self.selectionTask(undefined);
                         self.annotationTask(true);
                 }
-            }).catch(function(e){
-                
-                if(e.textStatus===404 || e.textStatus===410 || e.textStatus==="404" || e.textStatus==="410")
-                    {
-                        
-                        alert("No more Images");
-                        self.details({});
-                        self.executing(false);
-                        self.session(undefined);
-                    }
-                else if(e.textStatus)
-                    {   
-                        alert(e.textStatus);
-                       
-                        }
-                  
-                 else
-                    console.log(e);
             });
         }).catch(function(e){
-                alert(e.textStatus)
-                if(e.textStatus===404 || e.textStatus===410 || e.textStatus==="404" || e.textStatus==="410")
+                if(e.textStatus==404||e.textStatus==="Not Found" || e.textStatus==410 ||e.textStatus==="Gone")
                     {
-                        
                         alert("No more Images");
                         self.details({});
                         self.executing(false);
@@ -185,7 +147,7 @@ function ViewModel(ctx) {
                 }
             });
         }).catch(function(e){
-                if(e.textStatus===404 || e.textStatus===410 || e.textStatus==="404" || e.textStatus==="410")
+                if(e.textStatus==404||e.textStatus==="Not Found" ||e.textStatus==410||e.textStatus==="Gone")
                     {
                         alert("No  Images");
                         self.details({});
